@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,5 +15,6 @@ namespace kitty_store.Data
         }
 
         public DbSet<kitties.Models.Cat> Cat { get; set; } = default!;
+        public DbSet<kitties.Models.CatPosition> CatPosition { get; set; } = default!;
     }
 }
