@@ -1,10 +1,19 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Добро пожаловать в магазин котиков";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="jumbotron text-center">
+                <h1 class="display-4">Добро пожаловать в магазин котиков</h1>
+                <p class="lead">Ваш идеальный выбор для всего, что связано с котиками!</p>
+                <hr class="my-4">
+                <p>Исследуйте наш широкий ассортимент очаровательных котов и найдите своего идеального компаньона уже сегодня.</p>
+                <a class="btn btn-primary btn-lg" href="/Cats" role="button">Посмотреть котов</a>
+            </div>
+        </div>
+    </div>
 </div>
