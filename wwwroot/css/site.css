@@ -1,22 +1,46 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* Установим основной цвет и фон */
 body {
-  margin-bottom: 60px;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Светло-серый фон */
+}
+
+/* Установим размеры текста для разных экранов */
+h1, h2, h3, h4, h5, h6 {
+  color: #6e381e; /* Коричневый цвет для заголовков */
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Установим стили для кнопок */
+.btn {
+  background-color: #6e381e; /* Коричневый цвет для кнопок */
+  color: #fff; /* Белый цвет текста на кнопках */
+  border: none;
+}
+
+.btn:hover {
+  background-color: #8d4d2f; /* Темно-коричневый цвет при наведении */
+}
+
+/* Добавим немного отступов */
+.container {
+  margin-top: 20px;
+}
+
+.footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  background-color: #6e381e; /* Коричневый цвет для футера */
+  color: #fff; /* Белый цвет текста в футере */
+  text-align: center;
 }
