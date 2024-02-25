@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("kitty-store")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3aa7e123660241fbc41168af05e4d04046a03730")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ebb14081e13784ec6bd5caaa99f35b400c5d7bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("kitty-store")]
 [assembly: System.Reflection.AssemblyTitleAttribute("kitty-store")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
