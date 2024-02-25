@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using kitty_store.Data;
 
@@ -11,9 +12,11 @@ using kitty_store.Data;
 namespace kitty_store.Migrations
 {
     [DbContext(typeof(kitty_storeContext))]
-    partial class kitty_storeContextModelSnapshot : ModelSnapshot
+    [Migration("20240225092905_identity-migration")]
+    partial class identitymigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
