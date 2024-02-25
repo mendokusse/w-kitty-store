@@ -26,6 +26,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/annagnevanova/Desktop/kiti
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/annagnevanova/Desktop/kiti/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/annagnevanova/Desktop/kiti/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/annagnevanova/Desktop/kiti/Pages/CatPositions/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2F0UG9zaXRpb25zL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
