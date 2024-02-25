@@ -9,7 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbb42160-c88b-4b74-bc06-bc71a2a31a86" name="Changes" comment="modification date fills when edited">
-      <change beforePath="$PROJECT_DIR$/Pages/CatPositions/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/CatPositions/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/CatPositions/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/CatPositions/Index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
