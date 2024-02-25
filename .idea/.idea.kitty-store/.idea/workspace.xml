@@ -18,7 +18,7 @@
     <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Users/annagnevanova/Desktop/kiti/obj/Debug/net8.0/kitty-store.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/annagnevanova/Desktop/kiti/Pages/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -100,6 +100,7 @@
       <workItem from="1708101886167" duration="41000" />
       <workItem from="1708101974542" duration="55000" />
       <workItem from="1708102194934" duration="6616000" />
+      <workItem from="1708840159969" duration="346000" />
     </task>
     <task id="LOCAL-00001" summary="added catposition model and migration">
       <option name="closed" value="true" />
@@ -117,7 +118,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708109902753</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="changed layout">
+      <option name="closed" value="true" />
+      <created>1708840360829</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708840360830</updated>
+    </task>
+    <task id="LOCAL-00004" summary="changed styles">
+      <option name="closed" value="true" />
+      <created>1708840420290</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708840420290</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,7 +156,9 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="added catposition model and migration" />
     <MESSAGE value="миграция модели позиции котика в БД" />
-    <option name="LAST_COMMIT_MESSAGE" value="миграция модели позиции котика в БД" />
+    <MESSAGE value="changed layout" />
+    <MESSAGE value="changed styles" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed styles" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
