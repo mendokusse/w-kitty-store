@@ -8,8 +8,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbb42160-c88b-4b74-bc06-bc71a2a31a86" name="Changes" comment="modification date fills when edited">
+    <list default="true" id="fbb42160-c88b-4b74-bc06-bc71a2a31a86" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/wwwroot/css/cat-details.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wwwroot/css/catposition-index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.kitty-store/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.kitty-store/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/CatPositions/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/CatPositions/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/Cats/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Cats/Details.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/kitty-store.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/kitty-store.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/kitty-store.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/kitty-store.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/kitty-store.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/kitty-store.staticwebassets.runtime.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/kitty-store.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/kitty-store.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/kitty-store.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/kitty-store.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/kitty-store.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/kitty-store.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/kitty-store.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/kitty-store.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/kitty-store.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/kitty-store.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ref/kitty-store.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ref/kitty-store.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/refint/kitty-store.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/refint/kitty-store.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.pack.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.pack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets/msbuild.kitty-store.Microsoft.AspNetCore.StaticWebAssets.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets/msbuild.kitty-store.Microsoft.AspNetCore.StaticWebAssets.props" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +37,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="design" />
+        <entry key="$PROJECT_DIR$" value="cat-position-features" />
       </map>
     </option>
     <option name="RESET_MODE" value="HARD" />
@@ -109,6 +127,7 @@
       <workItem from="1708102194934" duration="6616000" />
       <workItem from="1708840159969" duration="346000" />
       <workItem from="1708840530773" duration="1325000" />
+      <workItem from="1708844422062" duration="313000" />
     </task>
     <task id="LOCAL-00001" summary="added catposition model and migration">
       <option name="closed" value="true" />

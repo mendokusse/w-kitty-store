@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/kitty-store.bundle.scp.css"
     },
     {
+      "Id": "/Users/annagnevanova/Desktop/kiti/wwwroot/css/cat-details.css",
+      "PackagePath": "staticwebassets/css/cat-details.css"
+    },
+    {
       "Id": "/Users/annagnevanova/Desktop/kiti/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kFLcWd/0uo75GVQXOoIXsnNd9hwT4UFKZhqossTXLBM=",
+  "Hash": "gf+S+YtAzp4Qf6MK03ipt2wpn67JT/MLOKU67ADuDms=",
   "Source": "kitty-store",
   "BasePath": "_content/kitty-store",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/annagnevanova/Desktop/kiti/obj/Debug/net8.0/scopedcss/projectbundle/kitty-store.bundle.scp.css"
+    },
+    {
+      "Identity": "/Users/annagnevanova/Desktop/kiti/wwwroot/css/cat-details.css",
+      "SourceId": "kitty-store",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/annagnevanova/Desktop/kiti/wwwroot/",
+      "BasePath": "_content/kitty-store",
+      "RelativePath": "css/cat-details.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/cat-details.css"
     },
     {
       "Identity": "/Users/annagnevanova/Desktop/kiti/wwwroot/css/site.css",
