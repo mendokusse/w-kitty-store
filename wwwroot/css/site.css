@@ -26,6 +26,7 @@ h3 {
   background-color: #6e381e; /* Коричневый цвет для кнопок */
   color: #fff; /* Белый цвет текста на кнопках */
   border: none;
+  margin: 5px
 }
 
 .btn:hover {
@@ -43,4 +44,8 @@ h3 {
   background-color: #6e381e; /* Коричневый цвет для футера */
   color: #fff; /* Белый цвет текста в футере */
   text-align: center;
+}
+
+.btn-danger:hover {
+  background-color: darkred;
 }
