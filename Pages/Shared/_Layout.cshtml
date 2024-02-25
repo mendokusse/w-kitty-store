@@ -7,47 +7,9 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/kitty_store.styles.css" asp-append-version="true" />
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <style>
-        /* Основные стили */
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fa;
-        }
-
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #6e381e; /* Коричневый цвет */
-        }
-
-        .nav-link {
-            color: #6e381e; /* Коричневый цвет */
-            font-weight: bold;
-        }
-
-        .nav-link:hover {
-            color: #8d4d2f; /* Темно-коричневый цвет при наведении */
-        }
-
-        .footer {
-            background-color: #6e381e; /* Коричневый цвет для футера */
-            color: #fff; /* Белый цвет текста в футере */
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .footer a {
-            color: #fff; /* Белый цвет для ссылок в футере */
-        }
-
-        .footer a:hover {
-            text-decoration: none;
-            color: #f8f9fa; /* Белый цвет при наведении на ссылки в футере */
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -67,6 +29,23 @@
                             <a class="nav-link" asp-area="" asp-page="/CatPositions/Index">Позиции котиков</a>
                         </li>
                     </ul>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <span class="user-name-layout">@User.Identity.Name!!!!</span>
+                        <a class="nav-link" href="/Identity/Account/Logout">Logout</a>
+                    }
+                    else
+                    {
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Identity/Account/Login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Identity/Account/Register">Register</a>
+                            </li>
+                        </ul>
+                    }
+
                 </div>
             </div>
         </nav>

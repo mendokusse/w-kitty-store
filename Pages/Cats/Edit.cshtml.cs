@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using kitties.Models;
 using kitty_store.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace kitty_store.Pages.Cats
 {
+    
     public class EditModel : PageModel
     {
         private readonly kitty_storeContext _context;

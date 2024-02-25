@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using kitties.Models;
 using kitty_store.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace kitty_store.Pages.Cats
 {
+    
     public class DeleteModel : PageModel
     {
         private readonly kitty_storeContext _context;

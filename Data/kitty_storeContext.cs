@@ -1,20 +1,26 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using kitties.Models;
+using kitty_store.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace kitty_store.Data
 {
-    public class kitty_storeContext : DbContext
+    public class kitty_storeContext : IdentityDbContext<User>
     {
-        public kitty_storeContext (DbContextOptions<kitty_storeContext> options)
+        public kitty_storeContext(DbContextOptions<kitty_storeContext> options)
             : base(options)
         {
         }
 
-        public DbSet<kitties.Models.Cat> Cat { get; set; } = default!;
-        public DbSet<kitties.Models.CatPosition> CatPosition { get; set; } = default!;
+        public DbSet<Cat> Cat { get; set; }
+        public DbSet<CatPosition> CatPosition { get; set; }
+        public DbSet<IdentityUserRole<string>> UserRoles { get; set; } // Добавляем DbSet для таблицы AspNetUserRoles
+
+        public async Task<string> GetRoleIdForUser(string userId)
+        {
+            var userRole = await UserRoles.FirstOrDefaultAsync(ur => ur.UserId == userId);
+            return userRole?.RoleId;
+        }
     }
 }

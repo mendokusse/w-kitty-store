@@ -1,12 +1,32 @@
 @page
 @model kitty_store.Pages.CatPositions.IndexModel
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using kitty_store.Models
+@inject UserManager<User> UserManager
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Index"; 
+    bool isAdmin = false;
+    bool isBuyer = false;
+
+    if (User.Identity.IsAuthenticated)
+    {
+        var userId = UserManager.GetUserId(User);
+        var user = await UserManager.FindByIdAsync(userId);
+        var roles = await UserManager.GetRolesAsync(user);
+        var userRole = roles.FirstOrDefault();
+        isAdmin = userRole == "Admin";
+        isBuyer = userRole == "Customer";
+    }
 }
-<p>
-    <a asp-page="Create" class="btn btn-primary">Создать</a>
-</p>
+
+@if (isAdmin)
+{
+    <p>
+        <a asp-page="Create" class="btn btn-primary">Создать</a>
+    </p>
+}
 
 <div class="row">
     @foreach (var item in Model.CatPosition) {
@@ -19,12 +39,25 @@
                     <p class="card-text date-info">Добавлено: @item.DateAdded<br>
                     Изменено: @item.DateModified</p>
                     <p class="card-text">Цена: @item.Price</p>
-                    <a href="@Url.Page("./Edit", new { id = item.Id })" class="btn btn-primary">Изменить</a>
-                    <a href="@Url.Page("./Details", new { id = item.Id })" class="btn btn-secondary">Детали</a>
-                    <a href="@Url.Page("./Delete", new { id = item.Id })" class="btn btn-danger">Удалить</a>
+                    @if (isAdmin)
+                    {
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+                    else if (isBuyer)
+                    {
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                        <a asp-page="BuyCat" asp-route-id="@item.Id">Buy</a>
+                    }
+                    else
+                    {
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                    }
                 </div>
             </div>
         </div>
     }
 </div>
-<head><link rel="stylesheet" href="css/catposition-index.css"></head>
+
+<head><link rel="stylesheet" href="~/css/catposition-index.css" /></head>
