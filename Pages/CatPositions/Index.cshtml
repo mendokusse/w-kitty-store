@@ -19,7 +19,9 @@
                     <h5 class="card-title">Price: @item.Price</h5>
                     <p class="card-text">Date Added: @item.DateAdded</p>
                     <p class="card-text">Date Modified: @item.DateModified</p>
-                    <p class="card-text">Cat Id: @item.CatId</p>
+                    <p class="card-text">
+                        Cat Id: <a href="@Url.Page("/Cats/Details", new { id = item.CatId })">@item.CatId</a>
+                    </p>
                     <a href="@Url.Page("./Edit", new { id = item.Id })" class="btn btn-primary">Edit</a>
                     <a href="@Url.Page("./Details", new { id = item.Id })" class="btn btn-secondary">Details</a>
                     <a href="@Url.Page("./Delete", new { id = item.Id })" class="btn btn-danger">Delete</a>

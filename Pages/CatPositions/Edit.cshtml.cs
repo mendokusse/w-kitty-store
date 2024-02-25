@@ -17,9 +17,14 @@ namespace kitty_store.Pages.CatPositions
         {
             _context = context;
         }
+        
+        private bool CatPositionExists(int id)
+        {
+            return _context.CatPosition.Any(e => e.Id == id);
+        }
 
         [BindProperty]
-        public CatPosition CatPosition { get; set; }
+        public CatPosition? CatPosition { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -45,35 +50,29 @@ namespace kitty_store.Pages.CatPositions
                 return Page();
             }
 
-            var existingCatPosition = await _context.CatPosition.FindAsync(CatPosition.Id);
-            if (existingCatPosition != null)
-            {
-                existingCatPosition.DateModified = DateTime.Now;
-                _context.Entry(existingCatPosition).State = EntityState.Modified;
+            _context.Attach(CatPosition).State = EntityState.Modified;
+            CatPosition.DateModified = DateTime.Now; // Установка времени изменения
 
-                try
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CatPositionExists(CatPosition.Id))
                 {
-                    await _context.SaveChangesAsync();
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
+                else
                 {
-                    if (!CatPositionExists(CatPosition.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    throw;
                 }
             }
 
             return RedirectToPage("./Index");
         }
+        
 
-        private bool CatPositionExists(int id)
-        {
-            return _context.CatPosition.Any(e => e.Id == id);
-        }
+
     }
 }
