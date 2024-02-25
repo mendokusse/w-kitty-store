@@ -1,10 +1,8 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using kitties.Models;
 using kitty_store.Data;
@@ -13,15 +11,15 @@ namespace kitty_store.Pages.CatPositions
 {
     public class EditModel : PageModel
     {
-        private readonly kitty_store.Data.kitty_storeContext _context;
+        private readonly kitty_storeContext _context;
 
-        public EditModel(kitty_store.Data.kitty_storeContext context)
+        public EditModel(kitty_storeContext context)
         {
             _context = context;
         }
 
         [BindProperty]
-        public CatPosition CatPosition { get; set; } = default!;
+        public CatPosition CatPosition { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,17 +28,16 @@ namespace kitty_store.Pages.CatPositions
                 return NotFound();
             }
 
-            var catposition =  await _context.CatPosition.FirstOrDefaultAsync(m => m.Id == id);
-            if (catposition == null)
+            CatPosition = await _context.CatPosition.FirstOrDefaultAsync(m => m.Id == id);
+
+            if (CatPosition == null)
             {
                 return NotFound();
             }
-            CatPosition = catposition;
+
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -48,21 +45,26 @@ namespace kitty_store.Pages.CatPositions
                 return Page();
             }
 
-            _context.Attach(CatPosition).State = EntityState.Modified;
+            var existingCatPosition = await _context.CatPosition.FindAsync(CatPosition.Id);
+            if (existingCatPosition != null)
+            {
+                existingCatPosition.DateModified = DateTime.Now;
+                _context.Entry(existingCatPosition).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CatPositionExists(CatPosition.Id))
+                try
                 {
-                    return NotFound();
+                    await _context.SaveChangesAsync();
                 }
-                else
+                catch (DbUpdateConcurrencyException)
                 {
-                    throw;
+                    if (!CatPositionExists(CatPosition.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
                 }
             }
 
