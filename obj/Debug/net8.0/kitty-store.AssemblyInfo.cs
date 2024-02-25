@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("kitty-store")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bcb79c218b7f3cdafc5984449dfca374bcf2dca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eef95f3d464af4a74a70a1b8740d62d3cb3e9039")]
 [assembly: System.Reflection.AssemblyProductAttribute("kitty-store")]
 [assembly: System.Reflection.AssemblyTitleAttribute("kitty-store")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

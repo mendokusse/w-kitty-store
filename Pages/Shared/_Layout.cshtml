@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,10 +7,51 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/kitty_store.styles.css" asp-append-version="true" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Основные стили */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #6e381e; /* Коричневый цвет */
+        }
+
+        .nav-link {
+            color: #6e381e; /* Коричневый цвет */
+            font-weight: bold;
+        }
+
+        .nav-link:hover {
+            color: #8d4d2f; /* Темно-коричневый цвет при наведении */
+        }
+
+        .footer {
+            background-color: #6e381e; /* Коричневый цвет для футера */
+            color: #fff; /* Белый цвет текста в футере */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #fff; /* Белый цвет для ссылок в футере */
+        }
+
+        .footer a:hover {
+            text-decoration: none;
+            color: #f8f9fa; /* Белый цвет при наведении на ссылки в футере */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">kitty_store</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -20,10 +61,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Cats/Index">Cats</a>
+                            <a class="nav-link" asp-area="" asp-page="/Cats/Index">Котики</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/CatPositions/Index">CatPositions</a>
+                            <a class="nav-link" asp-area="" asp-page="/CatPositions/Index">Позиции котиков</a>
                         </li>
                     </ul>
                 </div>
@@ -36,15 +77,17 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer">
         <div class="container">
-            &copy; 2024 - kitty_store - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            <p>&copy; 2024 - kitty_store - <a asp-area="" asp-page="/Privacy">Конфиденциальность</a></p>
+            <!-- Добавим иконки социальных сетей -->
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
         </div>
     </footer>
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
