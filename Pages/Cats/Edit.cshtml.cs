@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace kitty_store.Pages.Cats
 {
-    [Authorize(Roles = "Admin")]
+    
     public class EditModel : PageModel
     {
         private readonly kitty_storeContext _context;

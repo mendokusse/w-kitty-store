@@ -3,24 +3,24 @@
 @using Microsoft.AspNetCore.Identity
 @using kitty_store.Models
 @inject UserManager<User> UserManager
-
+@inject RoleManager<IdentityRole> RoleManager
 
 @{
     ViewData["Title"] = "Index";
-    bool isAdmin = User.IsInRole("Admin");
-    bool isBuyer = User.IsInRole("Customer");
+    
+    var userId = UserManager.GetUserId(User);
+    var user = await UserManager.FindByIdAsync(userId);
+    var roles = await UserManager.GetRolesAsync(user);
+    var userRole = roles.FirstOrDefault();
+    bool isAdmin = userRole == "Admin";
+    bool isBuyer = userRole == "Customer";
 }
-
-<h1>Index</h1>
-
-<p>@User.Identity.Name</p>
-
 
 @if (isAdmin)
 {
-        <p>
-            <a asp-page="Create">Create New</a>
-        </p>
+    <p>
+        <a asp-page="Create">Create New</a>
+    </p>
 }
 
 <table class="table">
@@ -34,7 +34,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Cat[0].Color)
-                    </th>
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Cat[0].Age)
             </th>
@@ -58,21 +58,7 @@
                     @Html.DisplayFor(modelItem => item.Age)
                 </td>
                 <td>
-                    @if (isAdmin)
-                    {
-                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
-                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
-                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                    }
-                    else if (isBuyer)
-                    {
-                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
-                        <a asp-page="BuyCat" asp-route-id="@item.Id">Buy</a>
-                    }
-                    else
-                    {
-                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
-                    }
+                    
 
                 </td>
             </tr>

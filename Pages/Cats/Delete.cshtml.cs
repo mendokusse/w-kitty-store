@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace kitty_store.Pages.Cats
 {
-    [Authorize(Roles = "Admin")]
+    
     public class DeleteModel : PageModel
     {
         private readonly kitty_storeContext _context;
