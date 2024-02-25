@@ -1,12 +1,18 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using kitty_store.Data;
+﻿using kitty_store.Data;
+using kitty_store.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<kitty_storeContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("kitty_storeContext") ?? throw new InvalidOperationException("Connection string 'kitty_storeContext' not found.")));
+
+builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<kitty_storeContext>();
 
 var app = builder.Build();
 
@@ -23,6 +29,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication(); // Add this line to configure authentication
 app.UseAuthorization();
 
 app.MapRazorPages();

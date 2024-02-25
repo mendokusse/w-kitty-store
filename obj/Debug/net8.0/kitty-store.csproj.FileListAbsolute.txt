@@ -559,3 +559,12 @@ C:/Users/annag/OneDrive/Рабочий стол/kiti2/obj/Debug/net8.0/kitty-st.
 /Users/annagnevanova/Desktop/kiti/obj/Debug/net8.0/kitty-store.pdb
 /Users/annagnevanova/Desktop/kiti/obj/Debug/net8.0/kitty-store.genruntimeconfig.cache
 /Users/annagnevanova/Desktop/kiti/obj/Debug/net8.0/ref/kitty-store.dll
+/Users/annagnevanova/Desktop/kiti/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/annagnevanova/Desktop/kiti/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/annagnevanova/Desktop/kiti/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/annagnevanova/Desktop/kiti/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.UI.dll
+/Users/annagnevanova/Desktop/kiti/bin/Debug/net8.0/Microsoft.Extensions.FileProviders.Embedded.dll
+/Users/annagnevanova/Desktop/kiti/bin/Debug/net8.0/Microsoft.Extensions.Identity.Core.dll
+/Users/annagnevanova/Desktop/kiti/bin/Debug/net8.0/Microsoft.Extensions.Identity.Stores.dll
+/Users/annagnevanova/Desktop/kiti/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/Users/annagnevanova/Desktop/kiti/obj/Debug/net8.0/kitty-store.MvcApplicationPartsAssemblyInfo.cs
