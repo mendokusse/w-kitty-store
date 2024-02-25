@@ -4,22 +4,28 @@
 @using kitty_store.Models
 @inject UserManager<User> UserManager
 @inject RoleManager<IdentityRole> RoleManager
+@using Microsoft.AspNetCore.Authorization
 
 @{
-    ViewData["Title"] = "Index";
-    
-    var userId = UserManager.GetUserId(User);
-    var user = await UserManager.FindByIdAsync(userId);
-    var roles = await UserManager.GetRolesAsync(user);
-    var userRole = roles.FirstOrDefault();
-    bool isAdmin = userRole == "Admin";
-    bool isBuyer = userRole == "Customer";
+    ViewData["Title"] = "Index"; 
+    bool isAdmin = false;
+    bool isBuyer = false;
+
+    if (User.Identity.IsAuthenticated)
+    {
+        var userId = UserManager.GetUserId(User);
+        var user = await UserManager.FindByIdAsync(userId);
+        var roles = await UserManager.GetRolesAsync(user);
+        var userRole = roles.FirstOrDefault();
+        isAdmin = userRole == "Admin";
+        isBuyer = userRole == "Customer";
+    }
 }
 
 @if (isAdmin)
 {
     <p>
-        <a asp-page="Create">Create New</a>
+        <a asp-page="Create" class="btn btn-primary">Создать</a>
     </p>
 }
 
@@ -58,8 +64,20 @@
                     @Html.DisplayFor(modelItem => item.Age)
                 </td>
                 <td>
-                    
-
+                     @if (isAdmin) {
+                                            <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                                            <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                                            <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                                        }
+                                        else if (isBuyer)
+                                        {
+                                            <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                                            <a asp-page="BuyCat" asp-route-id="@item.Id">Buy</a>
+                                        }
+                                        else
+                                        {
+                                            <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                                        }
                 </td>
             </tr>
         }

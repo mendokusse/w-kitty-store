@@ -15,7 +15,17 @@ builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfi
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<kitty_storeContext>();
     
+builder.Services.AddMvc()
+    .AddRazorPagesOptions(options =>
+    {
+        options.Conventions.AllowAnonymousToPage("/CatPositions/Index");
+    });
 
+builder.Services.AddMvc()
+    .AddRazorPagesOptions(options =>
+    {
+        options.Conventions.AllowAnonymousToPage("/Cats/Index");
+    });
 
 var app = builder.Build();
 

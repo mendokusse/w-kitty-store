@@ -1,21 +1,25 @@
 @page
 @model kitty_store.Pages.CatPositions.IndexModel
 @using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.TagHelpers
 @using kitty_store.Models
 @inject UserManager<User> UserManager
-@inject RoleManager<IdentityRole> RoleManager
 
 @{
-    ViewData["Title"] = "Index";
-    
-    var userId = UserManager.GetUserId(User);
-    var user = await UserManager.FindByIdAsync(userId);
-    var roles = await UserManager.GetRolesAsync(user);
-    var userRole = roles.FirstOrDefault();
-    bool isAdmin = userRole == "Admin";
-    bool isBuyer = userRole == "Customer";
-}
+    ViewData["Title"] = "Index"; 
+    bool isAdmin = false;
+    bool isBuyer = false;
 
+    if (User.Identity.IsAuthenticated)
+    {
+        var userId = UserManager.GetUserId(User);
+        var user = await UserManager.FindByIdAsync(userId);
+        var roles = await UserManager.GetRolesAsync(user);
+        var userRole = roles.FirstOrDefault();
+        isAdmin = userRole == "Admin";
+        isBuyer = userRole == "Customer";
+    }
+}
 
 @if (isAdmin)
 {
@@ -23,7 +27,6 @@
         <a asp-page="Create" class="btn btn-primary">Создать</a>
     </p>
 }
-
 
 <div class="row">
     @foreach (var item in Model.CatPosition) {
@@ -36,24 +39,25 @@
                     <p class="card-text date-info">Добавлено: @item.DateAdded<br>
                     Изменено: @item.DateModified</p>
                     <p class="card-text">Цена: @item.Price</p>
-                   @if (isAdmin)
-                                       {
-                                           <a asp-page="./Edit" class="btn btn-primary" asp-route-id="@item.Id">Edit</a>
-                                           <a asp-page="./Details" class="btn btn-primary" asp-route-id="@item.Id">Details</a>
-                                           <a asp-page="./Delete" class="btn btn-primary" asp-route-id="@item.Id">Delete</a>
-                                       }
-                                       else if (isBuyer)
-                                       {
-                                           <a asp-page="./Details" class="btn btn-primary" asp-route-id="@item.Id">Details</a>
-                                           <a asp-page="BuyCat" class="btn btn-primary" asp-route-id="@item.Id">Buy</a>
-                                       }
-                                       else
-                                       {
-                                           <a asp-page="./Details" class="btn btn-primary btn-danger" asp-route-id="@item.Id">Details</a>
-                                       }
+                    @if (isAdmin)
+                    {
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+                    else if (isBuyer)
+                    {
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                        <a asp-page="BuyCat" asp-route-id="@item.Id">Buy</a>
+                    }
+                    else
+                    {
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                    }
                 </div>
             </div>
         </div>
     }
 </div>
-<head><link rel="stylesheet" href="css/catposition-index.css"></head>
+
+<head><link rel="stylesheet" href="~/css/catposition-index.css" /></head>
