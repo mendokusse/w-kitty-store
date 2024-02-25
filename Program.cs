@@ -3,6 +3,7 @@ using kitty_store.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -37,3 +38,7 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
+
+
+
+

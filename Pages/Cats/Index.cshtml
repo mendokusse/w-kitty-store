@@ -1,15 +1,28 @@
 ﻿@page
 @model IndexModel
+@using Microsoft.AspNetCore.Identity
+@using kitty_store.Models
+@inject UserManager<User> UserManager
+
 
 @{
     ViewData["Title"] = "Index";
+    bool isAdmin = User.IsInRole("Admin");
+    bool isBuyer = User.IsInRole("Customer");
 }
 
 <h1>Index</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
+<p>@User.Identity.Name</p>
+
+
+@if (isAdmin)
+{
+        <p>
+            <a asp-page="Create">Create New</a>
+        </p>
+}
+
 <table class="table">
     <thead>
         <tr>
@@ -21,7 +34,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Cat[0].Color)
-            </th>
+                    </th>
             <th>
                 @Html.DisplayNameFor(model => model.Cat[0].Age)
             </th>
@@ -29,26 +42,40 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Cat) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Breed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gender)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Color)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Age)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Cat)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Breed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Color)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @if (isAdmin)
+                    {
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+                    else if (isBuyer)
+                    {
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                        <a asp-page="BuyCat" asp-route-id="@item.Id">Buy</a>
+                    }
+                    else
+                    {
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                    }
+
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

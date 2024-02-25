@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using kitties.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using kitties.Models;
 using kitty_store.Models;
 
 namespace kitty_store.Data

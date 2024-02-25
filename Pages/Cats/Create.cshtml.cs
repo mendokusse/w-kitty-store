@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using kitties.Models;
 using kitty_store.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace kitty_store.Pages.Cats
 {
+    [Authorize(Roles = "Admin")]
     public class CreateModel : PageModel
     {
         private readonly kitty_storeContext _context;
