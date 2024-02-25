@@ -1,4 +1,4 @@
-﻿using kitty_store.Data;
+using kitty_store.Data;
 using kitty_store.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

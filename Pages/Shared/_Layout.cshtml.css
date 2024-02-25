@@ -1,6 +1,43 @@
 ﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+/* Основные стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6e381e; /* Коричневый цвет */
+}
+
+.nav-link {
+    color: #6e381e; /* Коричневый цвет */
+    font-weight: bold;
+}
+
+    .nav-link:hover {
+        color: #8d4d2f; /* Темно-коричневый цвет при наведении */
+    }
+
+.footer {
+    background-color: #6e381e; /* Коричневый цвет для футера */
+    color: #fff; /* Белый цвет текста в футере */
+    padding: 20px 0;
+    text-align: center;
+}
+
+    .footer a {
+        color: #fff; /* Белый цвет для ссылок в футере */
+    }
+
+        .footer a:hover {
+            text-decoration: none;
+            color: #f8f9fa; /* Белый цвет при наведении на ссылки в футере */
+        }
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
